@@ -1,0 +1,23 @@
+CREATE DATABASE T_Optus;
+
+USE T_Optus;
+
+CREATE TABLE Estilos
+(
+    IdEstilo    INT PRIMARY KEY IDENTITY
+    ,Nome       VARCHAR(200) NOT NULL UNIQUE
+);
+
+CREATE TABLE Artistas
+(
+    IdArtista     INT PRIMARY KEY IDENTITY
+    ,Nome		  VARCHAR(200) UNIQUE
+    ,IdEstilo     INT FOREIGN KEY REFERENCES Estilos (IdEstilo)
+);
+CREATE TABLE Usuarios 
+(
+	IdUsuario 	INT PRIMARY KEY IDENTITY
+	,Email		VARCHAR(255) NOT NULL UNIQUE
+	,Senha		VARCHAR(255) NOT NULL
+	,Permissao	VARCHAR(255) NOT NULL
+);
