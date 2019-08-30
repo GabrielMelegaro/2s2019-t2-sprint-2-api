@@ -7,7 +7,7 @@ namespace Senai.Ekips.WebApi.Domains
     {
         public int IdFuncionario { get; set; }
         public string Nome { get; set; }
-        public int Cpf { get; set; }
+        public long Cpf { get; set; }
         public DateTime DataNascimento { get; set; }
         public int? IdDepartamento { get; set; }
         public int? IdCargo { get; set; }

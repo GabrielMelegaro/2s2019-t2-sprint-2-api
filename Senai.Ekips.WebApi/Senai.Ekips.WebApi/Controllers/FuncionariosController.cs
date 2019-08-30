@@ -23,16 +23,13 @@ namespace Senai.Ekips.WebApi.Controllers
         }
 
         [HttpPost]
-        public IActionResult Cadastrar(Funcionarios funcionario)
+        public void Cadastrar(Funcionarios funcionario)
         {
-            try
-            {
-                FuncionarioRepository.Cadastrar(funcionario);
-                return Ok();
-            }
-            catch(Exception ex)
-            {
-                return BadRequest(new { mensagem = "Algo de ERRADO não está CERTO" + ex.Message });
+            using (EkipsContext ctx = new EkipsContext())
+            { 
+                ctx.Funcionarios.Add(funcionario);
+
+                ctx.SaveChanges();
             }
         }
 

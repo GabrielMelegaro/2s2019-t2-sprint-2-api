@@ -31,7 +31,7 @@ namespace Senai.Ekips.WebApi
                 c.SwaggerDoc("v1",
                 new Swashbuckle.AspNetCore.Swagger.Info
                 {
-                    Title = "Gufos API",
+                    Title = "Ekips API",
                     Version = "v1"
                 });
             });
@@ -49,7 +49,7 @@ namespace Senai.Ekips.WebApi
 
                     ValidateLifetime = true,
 
-                    IssuerSigningKey = new SymmetricSecurityKey(System.Text.Encoding.UTF8.GetBytes("gufos-chave-autenticacao")),
+                    IssuerSigningKey = new SymmetricSecurityKey(System.Text.Encoding.UTF8.GetBytes("Ekips-chave-autenticacao")),
 
                     ClockSkew = TimeSpan.FromMinutes(30),
 
@@ -77,7 +77,7 @@ namespace Senai.Ekips.WebApi
 
             app.UseSwaggerUI(c =>
             {
-                c.SwaggerEndpoint("/swagger/v1/swagger.json", "Gufos API V1");
+                c.SwaggerEndpoint("/swagger/v1/swagger.json", "Ekips API V1");
             });
 
             //app.Run(async (context) =>
